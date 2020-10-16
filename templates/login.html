@@ -1,6 +1,6 @@
 {% extends "page.html" %}
 {% if announcement_login %}
-{% set announcement = announcement_login %}
+  {% set announcement = announcement_login %}
 {% endif %}
 
 {% block login_widget %}
@@ -13,26 +13,13 @@
   <div class="loginTable">
     <div class="loginTableRow">
       <div class="contentLeft">
-        <img src="content.illumidesk.com/img/logo_transparent_bg.png" alt="IllumiDesk">
+        <img src="https://content.illumidesk.com/img/logo_transparent_bg.png" alt="IllumiDesk">
       </div>
       <div class="contentRight">
-        <form id="login" name="login" action="/idp/profile/SAML2/POST/SSO?execution=e1s1" method="post">
+        <form action="{{login_url}}?next={{next}}" method="post" role="form">
           <input type="hidden" name="performauthentication" value="true">
           <div class="inputContainer">
             <br>
-            <!--<center>
-              <h3> Google OAuth 2.0 </h3>
-            </center> -->
-            <center>
-              <a role="button" id="google-signin2" href='{{authenticator_login_url}}'>
-                <img width="200px" height="52px"
-                  src="https://storage.googleapis.com/utd/assets/btn_google_signin_dark_normal_web%402x.png"
-                  onmouseover="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_focus_web%402x.png'"
-                  onmouseout="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_normal_web%402x.png'"
-                  onmousedown="this.src='https://storage.googleapis.com/utd/assets/btn_google_signin_dark_pressed_web%402x.png'"
-                  border="0" alt="Google"/>
-              </a>
-            </center>
             <div class="inputContainer">
               <label class="inputLabel" for="Username">Username</label>
               <br>
@@ -65,24 +52,14 @@
 {% endblock login %}
 {% endblock %}
 
-{% block stylesheet %}
-<link rel="stylesheet" href="https://content.illumidesk.com/css/ild.css" type="text/css" />
-{% endblock %}
-
 {% block script %}
 {{ super() }}
 <script>
-  if (window.location.protocol === "http:") {
-    // unhide http warning
-    var warning = document.getElementById('insecure-login-warning');
-    warning.className = warning.className.replace(/\bhidden\b/, '');
-  }
-  // setup onSubmit feedback
-  $('form').submit((e) => {
-    var form = $(e.target);
-    form.find('.feedback-container>input').attr('disabled', true);
-    form.find('.feedback-container>*').toggleClass('hidden');
-    form.find('.feedback-widget>*').toggleClass('fa-pulse');
-  });
+if (window.location.protocol === "http:") {
+  // unhide http warning
+  var warning = document.getElementById('insecure-login-warning');
+  warning.className = warning.className.replace(/\bhidden\b/, '');
+}
 </script>
+
 {% endblock %}
