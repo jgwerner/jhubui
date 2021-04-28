@@ -21,14 +21,14 @@
 </div>
 {% else %}
 <form action="{{login_url}}?next={{next}}" method="post" role="form">
-  <div class="auth-form-header-illumidesk">
+  <div class="auth-form-header">
     Sign in
   </div>
-  <div class='auth-form-body-illumidesk'>
+  <div class='auth-form-body'>
 
     <p id='insecure-login-warning' class='hidden'>
-    Warning: JupyterHub seems to be served over an unsecured HTTP connection.
-    We strongly recommend enabling HTTPS for JupyterHub.
+    Warning: IllumiDesk seems to be served over an unsecured HTTP connection.
+    We strongly recommend enabling HTTPS for IllumiDesk.
     </p>
 
     {% if login_error %}
@@ -61,7 +61,7 @@
       <input
         id="login_submit"
         type="submit"
-        class='btn btn-illumidesk'
+        class='btn btn-primary'
         value='Sign in'
         tabindex="3"
         />

@@ -4,7 +4,7 @@ Basic UI customization for the JupyterHub.
 
 ## Local Configuration
 
-1. Create and activate `virtualenv`:
+1. (Recommended) Create and activate `virtualenv`:
 
     virtualenv -p python3 venv
 
@@ -13,6 +13,8 @@ Basic UI customization for the JupyterHub.
     python3 -m pip install jupyterhub notebook
 
 3. Update the JupyterHub configruation file so that the `template_paths` config has the correct location for the custom templates provided in this repo.
+
+**NOTE**: the `jupyterhub_config.py` provided in this repo uses the standard `/usr/local/share/jupyterhub/...` location. If you installed the JupyterHub in your virtual environment then these locations are available in the `/path/to/venv/share/jupyterhub/...`.
 
 Start JupyterHub with the example configuration file:
 

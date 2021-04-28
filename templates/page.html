@@ -12,7 +12,7 @@
         {{ caller() }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-illumidesk" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-jupyter" data-dismiss="modal">Cancel</button>
         <button type="button" class="btn {{btn_class}}" data-dismiss="modal" data-dismiss="modal">{{btn_label}}</button>
       </div>
     </div>
@@ -31,7 +31,7 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block stylesheet %}
-    <link rel="stylesheet" href="{{ static_url("extra-assets/css/illumidesk-style.css") }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ static_url("css/illumidesk-style.css") }}" type="text/css"/>
     <link rel="stylesheet" href="{{ static_url("css/style.min.css") }}" type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" type="text/css">
     {% endblock %}

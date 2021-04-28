@@ -4,10 +4,10 @@
 c.Application.log_level = 'DEBUG'
 
 ## Custom logo file
-c.JupyterHub.logo_file = '/home/ubuntu/jhubui/extra-assets/images/illumidesk.png'
+c.JupyterHub.logo_file = '/usr/local/share/jupyterhub/static/images/illumidesk-80.png'
 
 ## Custom template paths
-c.JupyterHub.template_paths = ['/home/ubuntu/jhubui/templates', '/usr/local/share/jupyter/hub/custom_templates']
+c.JupyterHub.template_paths = ['/usr/local/share/jupyterhub/templates', '/usr/local/share/jupyterhub/custom_templates']
 
 ## Create a list of services to display service menu
 c.JupyterHub.services = [
